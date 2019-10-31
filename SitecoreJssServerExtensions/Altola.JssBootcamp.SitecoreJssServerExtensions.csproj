@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

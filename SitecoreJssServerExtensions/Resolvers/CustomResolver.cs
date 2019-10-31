@@ -22,7 +22,7 @@ namespace Altola.JssBootcamp.SitecoreJssServerExtensions.Resolvers
 
             return new
             {
-                name = datasource.Name,
+                name = datasource?.Name,
                 date = DateTime.Now,
                 hello = "world"
             };
