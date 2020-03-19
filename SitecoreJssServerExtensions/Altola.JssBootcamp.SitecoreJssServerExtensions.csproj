@@ -43,10 +43,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GraphQL, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GraphQL.2.0.0\lib\net45\GraphQL.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.JavaScriptServices.Configuration, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.JavaScriptServices.Configuration.13.0.0\lib\net471\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.GraphQL, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.JavaScriptServices.GraphQL.13.0.0\lib\net471\Sitecore.JavaScriptServices.GraphQL.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.JavaScriptServices.ViewEngine, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.JavaScriptServices.ViewEngine.13.0.0\lib\net471\Sitecore.JavaScriptServices.ViewEngine.dll</HintPath>
@@ -64,14 +73,28 @@
       <HintPath>..\packages\Sitecore.Mvc.9.2.0\lib\net471\Sitecore.Mvc.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.Services.GraphQL, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Services.GraphQL.1.1.4\lib\netstandard2.0\Sitecore.Services.GraphQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.GraphQL.Content, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Services.GraphQL.ContentSchema.1.1.4\lib\net471\Sitecore.Services.GraphQL.Content.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.GraphQL.NetFxHost, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Services.GraphQL.NetFxHost.1.1.4\lib\net471\Sitecore.Services.GraphQL.NetFxHost.dll</HintPath>
+    </Reference>
     <Reference Include="sysglobl" />
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.IO.FileSystem.Primitives" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Thread" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -101,6 +124,9 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GraphQL\GraphQLExtenders.cs" />
+    <Compile Include="Pipelines\GetLayoutServiceContext\BreadcrumbProcessor.cs" />
+    <Compile Include="Pipelines\GetRenderingEngineViewBag\AddNavBarContent.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\MembershipProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resolvers\CustomResolver.cs" />
